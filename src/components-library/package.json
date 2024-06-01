@@ -1,0 +1,33 @@
+{
+  "name": "components-library",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/components/index.js",
+  "module": "dist/components/index.js",
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "clean":"node scripts/clean.js",
+    "build:components": "swc src/components --out-dir dist/components && node scripts/reorganize.js",
+    "build:types": "tsc",
+    "build:beforeNpmPublish": "npm run clean && npm run build:types && npm run build:components && node scripts/copyIndexFiles.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
+  },
+  "devDependencies": {
+    "@swc/cli": "^0.3.12",
+    "@swc/core": "^1.5.7",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "fs-extra": "^11.2.0"
+  },
+  "files": [
+    "dist/components",
+    "dist/types",
+    "README.md"
+  ]
+}
