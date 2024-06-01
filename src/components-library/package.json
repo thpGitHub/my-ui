@@ -1,7 +1,7 @@
 {
-  "name": "components-library",
-  "version": "1.0.0",
-  "description": "",
+  "name": "my-react-ui-components",
+  "version": "1.0.1",
+  "description": "A set of reusable React UI components",
   "main": "dist/components/index.js",
   "module": "dist/components/index.js",
   "types": "dist/types/index.d.ts",
@@ -13,7 +13,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "peerDependencies": {
     "react": ">=17.0.0",
     "react-dom": ">=17.0.0"
