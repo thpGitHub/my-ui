@@ -15,6 +15,12 @@ export const typeDefs = gql`
 
   type Mutation {
     addComponent(name: String!, content: String!): Component
+    saveComponents(components: [ComponentInput!]!): [Component]
+  }
+
+  input ComponentInput {
+    name: String!
+    content: String!
   }
 `;
 
@@ -28,6 +34,10 @@ export const resolvers = {
       const component = new Component({ name, content });
       await component.save();
       return component;
+    },
+    saveComponents: async (_, { components }) => {
+      const savedComponents = await Component.insertMany(components);
+      return savedComponents;
     },
   },
 };

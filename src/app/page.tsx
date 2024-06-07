@@ -1,6 +1,7 @@
 'use client';
 
 import { useQuery, gql } from '@apollo/client';
+import SaveComponentButton from '@/components/SaveComponentButton';
 
 const GET_COMPONENTS = gql`
   query GetComponents {
@@ -27,6 +28,7 @@ const ComponentsPage = () => {
           <div dangerouslySetInnerHTML={{ __html: component.content }} />
         </div>
       ))}
+      <SaveComponentButton />
     </div>
   );
 };
