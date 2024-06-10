@@ -22,12 +22,6 @@ const ComponentsPage = () => {
   return (
     <div>
       <h1>BackOffice of My-UI-Doc</h1>
-      {data.components.map((component: any) => (
-        <div key={component._id}>
-          <h2>{component.name}</h2>
-          <div dangerouslySetInnerHTML={{ __html: component.content }} />
-        </div>
-      ))}
       <SaveComponentButton />
     </div>
   );
